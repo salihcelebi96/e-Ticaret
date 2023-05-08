@@ -26,7 +26,7 @@ const Basket = () => {
   return (
     <div>
       <div>
-        <Navbar/>
+        <Navbar productDetail={productDetail}/>
       </div>
       {
         productDetailStatus == "LOADING" ? <Loading/> :  <BasketComp productDetail={productDetail} />

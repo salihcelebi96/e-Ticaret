@@ -13,8 +13,8 @@ const BasketComp = ({ productDetail }) => {
     
     const dispatch = useDispatch();
     
- 
-
+    console.log(basketItems)
+    console.log(productDetail)
     const handleDeleteProduct = () => {
         dispatch(deleteProduct(productDetail.id));
         console.log(productDetail.id)
@@ -22,6 +22,7 @@ const BasketComp = ({ productDetail }) => {
         
       };
       
+
 
       const handleAddProduct = () => {
         // Dispatch the addProduct action with the given id
@@ -74,9 +75,12 @@ const BasketComp = ({ productDetail }) => {
 
 
             <div className='flex  flex-col   justify-center items-center gap-5 w-full relative'>
-                <div className='border w-60 rounded-md flex justify-center h-60'>
+                <div className='border w-60 rounded-md flex justify-center '>
                     <div className='  w-64 p-2 '>
                         <h3 className='text-center text-xl'>Sipariş Özeti</h3>
+                        <div className='flex justify-center'>
+                            <img className='h-16 w-16' src={productDetail.image} alt=""/>
+                        </div>
                         <div className='my-2 '>
                             <div className='flex justify-between w-full '>
                                 <p>Ürünün Ücreti</p>
@@ -112,7 +116,7 @@ const BasketComp = ({ productDetail }) => {
 
 
                             <hr className='my-3' />
-                            <div className='flex justify-between '>
+                            <div className='flex justify-between  '>
                                 <h3>Toplam</h3>
                                 <p className='text-orange-500'> {total} <span>TL</span></p>
                             </div>
@@ -124,7 +128,7 @@ const BasketComp = ({ productDetail }) => {
                     </div>
 
                 </div>
-                <div className='border h-10 bg-green-500 hover:bg-green-400 rounded-md justify-center flex items-center w-60'>
+                <div className='border  h-10 bg-green-500 hover:bg-green-400 rounded-md justify-center flex items-center w-60'>
                     <button onClick={handleAddProduct}  type="">Siparişi Tamamla</button>
                 </div>
                 <div className='border h-10 bg-red-500 hover:bg-red-400 rounded-md justify-center flex items-center w-60'>

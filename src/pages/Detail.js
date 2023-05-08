@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getDetailProduct } from '../redux/productSlice'
@@ -9,7 +9,13 @@ import Navbar from "../components/navbar"
 const Detail = () => {
   const {id} = useParams()
   const dispatch = useDispatch();
-  const { productDetail, productDetailStatus } = useSelector(state => state.products )
+  const { productDetail, productDetailStatus } = useSelector(state => state.products )    
+  
+        
+
+ 
+
+
 
 
   useEffect(()=>{
