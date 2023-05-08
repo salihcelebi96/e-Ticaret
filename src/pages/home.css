@@ -1,0 +1,42 @@
+.img{
+    height: 20rem;
+    width: 15rem;
+    margin-top: 3rem;
+}
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    
+    
+
+    
+
+}
+.canta{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+
+}
+
+.item{
+    margin: 1rem;
+    width: 15rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin: 3rem;
+    
+
+    
+}
+
+.title{
+    list-style: none;
+
+}
