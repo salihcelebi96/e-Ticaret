@@ -51,7 +51,8 @@ const Navbar = ({ productDetail }) => {
 
                 <div className='search relative flex my-2 gap-2 items-center  '>
                     <div className='relative flex justify-end items-center'>
-                        <input className='bg-gray-200 rounded-full  h-10  w-52  flex justify-center  border border-none  outline-none ' placeholder='search' />
+                    <input className='bg-gray-200 rounded-full h-10 w-52 flex justify-center border border-none outline-none ' placeholder='search' />
+
                         <FiSearch size={15} className='absolute mx-1' />
                     </div>
 
