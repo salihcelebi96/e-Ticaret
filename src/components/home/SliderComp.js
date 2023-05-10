@@ -26,15 +26,15 @@ function SliderComp() {
 
 
 
-      <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true} interval={5000}  >
+      <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true} interval={5000} showStatus={false}  >
         <div>
-          <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e2fc84a-c7d3-4d6a-a08d-2e2e90b28071/pegasus-40-premium-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-HTDVsQ.png" style={{ height: '35rem', width: '100%', objectFit: 'cover' }} />
+          <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e2fc84a-c7d3-4d6a-a08d-2e2e90b28071/pegasus-40-premium-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-HTDVsQ.png" style={{ height: '35rem', maxWidth: '100%', objectFit: 'cover' }} />
         </div>
         <div>
-          <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/00b525ac-e0ba-49cf-88dd-4635f0dd380d/air-zoom-pegasus-40-pr-gen%C3%A7-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-NMJdZs.png" style={{ height: '35rem', width: '100%', objectFit: 'cover' }} />
+          <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/00b525ac-e0ba-49cf-88dd-4635f0dd380d/air-zoom-pegasus-40-pr-gen%C3%A7-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-NMJdZs.png" style={{ height: '35rem', maxWidth: '100%', objectFit: 'cover' }} />
         </div>
         <div>
-          <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b032763f-bd34-4741-8967-658653e7ea5f/air-force-1-07-ayakkab%C4%B1s%C4%B1-WZ4MNC.png" style={{ height: '35rem', width: '100%', objectFit: 'cover' }} />
+          <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b032763f-bd34-4741-8967-658653e7ea5f/air-force-1-07-ayakkab%C4%B1s%C4%B1-WZ4MNC.png" style={{ height: '35rem', maxWidth: '100%', objectFit: 'cover' }} />
         </div>
 
         

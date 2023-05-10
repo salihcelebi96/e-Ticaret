@@ -3,12 +3,13 @@ import { AiOutlineHeart } from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux"
 import { sizeSelected } from "../redux/sizeSlice"
+import { addProductToFavori } from "../redux/favoriSlice";
 
 const DetailComp = ({productDetail}) =>{
   
 
 
-
+ 
   const dispatch = useDispatch()
   const [selectedSize, setSelectedSize] = useState(null);
   const navigate = useNavigate();
@@ -32,6 +33,16 @@ const DetailComp = ({productDetail}) =>{
   const handleAddToCart = () => {
     
     navigate(`/products/${productDetail.id}/basket`); 
+    
+    
+  }
+
+  const handleFavori = () => {
+    
+    if (selectedSize) {
+      dispatch(addProductToFavori({ ...productDetail, size: selectedSize }));
+    }
+    navigate(`/products/${productDetail.id}/favori`);
     
   }
   
@@ -57,7 +68,7 @@ const DetailComp = ({productDetail}) =>{
                <button disabled={!selectedSize} onClick={handleAddToCart} type="">SEPETE EKLE</button>   
             </div>
             <div className='flex items-center border w-12 justify-center rounded-sm'>
-              <AiOutlineHeart className='stroke-current text-gray-500 hover:text-red-500' size={28} />
+              <AiOutlineHeart disabled={!selectedSize} onClick={handleFavori} className='stroke-current text-gray-500 hover:text-red-500' size={28} />
             </div>
           </div>
         </div>
