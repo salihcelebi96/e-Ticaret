@@ -4,6 +4,7 @@ import productSlice from "../redux/productSlice";
 import sizeSlice from "../redux/sizeSlice";
 import basketSlice from "../redux/basketSlice";
 import favoriSlice from "../redux/favoriSlice";
+import searchSlice from "../redux/searchSlice";
 
 
 
@@ -14,7 +15,8 @@ export const store = configureStore({
         products :  productSlice,
         size : sizeSlice,
         basket : basketSlice,
-        favori : favoriSlice
+        favori : favoriSlice,
+        search : searchSlice
        
         
         

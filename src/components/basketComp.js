@@ -101,7 +101,7 @@ const BasketComp = ({ productDetail }) => {
                                     <h3>Miktar</h3>
                                 </div>
                                 <div className='flex justify-center text-xl gap-4 cursor-pointer  w-full'>
-                                    <button disabled={quantity == 0} onClick={decrement} className='text-2xl' type="">-</button>
+                                    <button disabled={quantity === 0} onClick={decrement} className='text-2xl' type="">-</button>
                                     <p> {quantity} </p>
                                     <button onClick={increment} className='text-2xl' type="">+</button>
 

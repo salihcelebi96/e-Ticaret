@@ -7,16 +7,13 @@ import ReactPaginate from 'react-paginate';
 import { getCategoryProducts } from '../redux/productSlice';
 
 
-const Products = ({category,sort}) => {
+const Products = ({ category, sort }) => {
   const dispatch = useDispatch();
-
-  const { products, productsStatus } = useSelector(state => state.products)
+ const searchKeyword = useSelector(state => state.search.searchKeyword);
+  const { products, productsStatus } = useSelector(state => state.products);
 
   const [itemOffset, setItemOffset] = useState(0);
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
   const itemsPerPage = 6
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
@@ -32,47 +29,37 @@ const Products = ({category,sort}) => {
     setItemOffset(newOffset);
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    if(category){
+    const filtered = products.filter((product) => product.title.toLowerCase().includes(searchKeyword.toLowerCase()));
+    setFilteredProducts(filtered);
+  }, [products, searchKeyword]);
+
+  useEffect(() => {
+    if (category) {
       dispatch(getCategoryProducts(category))
 
-    }else{
+    } else {
       dispatch(getProducts())
     }
-    
-  }, [dispatch,category])
 
-
-
-
-
-
+  }, [dispatch, category])
 
   return (
     <div>
       {
         productsStatus == "LOADING" ? <Loading /> :
           <><div className='grid sm:grid-cols-1     lg:grid-cols-3  md:grid-cols-2 gap-10'>
-            {currentItems?.sort((a,b)=> sort == "inc" ? a.price-b.price : sort == "dec" ? b.price-a.price : null )?.map((product, i) => (
-              <Product key={i} product={product} />
-            ))}
+            {filteredProducts.length > 0 ?
+              filteredProducts?.sort((a, b) => sort == "inc" ? a.price - b.price : sort == "dec" ? b.price - a.price : null)?.map((product, i) => (
+                <Product key={i} product={product} />
+              )) :
+              currentItems?.sort((a, b) => sort == "inc" ? a.price - b.price : sort == "dec" ? b.price - a.price : null)?.map((product, i) => (
+                <Product key={i} product={product} />
+              ))}
           </div>
-          <ReactPaginate
+            <ReactPaginate
               className='paginate'
               breakLabel="..."
               nextLabel=" >"
@@ -81,17 +68,9 @@ const Products = ({category,sort}) => {
               pageCount={pageCount}
               previousLabel="< "
               renderOnZeroPageCount={null} />
-              </>
-
-        
-             
-
-
-
+          </>
 
       }
-
-
     </div>
   )
 }
