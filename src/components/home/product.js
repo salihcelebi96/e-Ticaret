@@ -48,7 +48,7 @@ const Product = ({ product }) => {
       onMouseLeave={() => setVisible(false)}
       id={`product-${product.id}`}
       onClick={()=>  navigate(`products/${product?.id}`)}
-      className='container  border relative flex-col items-center overflow-hidden  h-96  flex justify-center mt-8'>
+      className='container  border-2 border-orange-200 relative hover:border-orange-500 flex-col items-center overflow-hidden   h-96  flex justify-center mt-8'>
 
       <div  className='absolute top-0 right-0 p-1 rounded-sm     bg-red-700 text-white'>
 

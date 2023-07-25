@@ -13,10 +13,12 @@ const Category = ({setCategory}) => {
   const dispatch = useDispatch();
   const { categories } = useSelector(state => state.categories)
   const {products} = useSelector(state => state.products);
+   
 
   const handleClick = () => {
-    dispatch(getProducts())
-  }
+   
+    dispatch(getProducts());
+  };
   
 
   useEffect(() => {

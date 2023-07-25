@@ -24,10 +24,13 @@ const dispatch = useDispatch();
 
     const handleAddToCart = () => {
         navigate(`/`);
+        dispatch(setSearchKeyword(""));
     }
 
-    const handleAdToCart = () => {
+    const handleAdToCart = (event) => {
         navigate(`/basket`);
+        
+        dispatch(setSearchKeyword(""));
     }
 
     const handleBasket = () => {
