@@ -56,7 +56,7 @@ const dispatch = useDispatch();
         <div className='flex items-center my-5'>
             <div className='logo'>
                 <div>
-                    <h1 onClick={handleAddToCart} className="font-bold text-6xl cursor-pointer">E-Shopping</h1>
+                    <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:2xl cursor-pointer">E-Shopping</h1>
                 </div>
 
                 <div className='search relative flex my-2 gap-2 items-center'>

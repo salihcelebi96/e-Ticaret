@@ -33,15 +33,15 @@ const Sepet = () => {
                          <img className="h-24 w-20" src={item.image} alt="" />
                     </div>
                    
-                    <div className="flex items-center justify-center w-[800px]">
-                        <p className="text-2xl">{item.title}</p>
+                    <div className="flex items-center justify-center sm:w-[400px]   lg:w-[600px]">
+                        <p className="lg:text-2xl  sm:text-sm">{item.title}</p>
                     </div>
 
                     <div className="flex items-center h-24 w-24 ">
                         <p className="text-2xl">{item.price} <span>TL</span></p>
                     </div>
                     <div className="flex items-center h-24 w-24">
-                        <button onClick={()=> deleteProducts(item.id)} className="bg-red-500 hover:bg-red-400 text-white p-2 border rounded-md" type="">Ürünü Sil</button>
+                        <button onClick={()=> deleteProducts(item.id)} className="bg-red-500 hover:bg-red-400   lg:text-lg   max-sm:text-sm     text-white p-2 border rounded-md" type="">Ürünü Sil</button>
                     </div>
 
                 </div>
