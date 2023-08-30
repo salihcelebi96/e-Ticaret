@@ -2,13 +2,15 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Navbar from "../components/navbar";
 import { deleteProduct } from "../redux/basketSlice";
+import {Link} from "react-router-dom";
+
 
 const Sepet = () => {
     const basketItems = useSelector(state => state.basket.basketItems);
     const dispatch = useDispatch();
-
+    const productTotals = useSelector(state => state.total.productTotals);
     console.log(basketItems)
-
+    console.log("totale", productTotals)
     const deleteProducts = (id) => {
         dispatch(deleteProduct(id));
     }
@@ -38,11 +40,17 @@ const Sepet = () => {
                     </div>
 
                     <div className="flex items-center h-24 w-24 ">
-                        <p className="text-2xl">{item.price} <span>TL</span></p>
+                        <p className="text-2xl"> {productTotals[item.id]} <span>TL</span></p>
                     </div>
-                    <div className="flex items-center h-24 w-24">
+                    <div className="flex   w-72 justify-between items-center ">
+                     <div className="bg-green-600  hover:bg-green-500   p-2 lg:text-lg  border rounded-md  max-sm:text-sm   flex justify-center text-white items-center ">
+                        <Link to="/products/:id/basket/sepet/payment" > Ödemeyi Tamamla  </Link>
+                    </div>
+                    <div className="flex items-center  h-24">
                         <button onClick={()=> deleteProducts(item.id)} className="bg-red-500 hover:bg-red-400   lg:text-lg   max-sm:text-sm     text-white p-2 border rounded-md" type="">Ürünü Sil</button>
                     </div>
+                    </div>
+                   
 
                 </div>
 
@@ -65,33 +73,3 @@ const Sepet = () => {
 export default Sepet;
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

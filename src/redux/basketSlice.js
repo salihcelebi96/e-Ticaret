@@ -18,7 +18,3 @@ const basketSlice = createSlice({
 export const { addProduct, deleteProduct } = basketSlice.actions;
 
 export default basketSlice.reducer;
-
-  
-
-

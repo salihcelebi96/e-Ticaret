@@ -3,38 +3,19 @@ import Navbar from "../components/navbar"
 import { useSelector,useDispatch } from 'react-redux';
 import { deleteProduct, addProduct } from "../redux/basketSlice";
 import { useNavigate } from 'react-router-dom';
+import { setTotal } from "../redux/totalReducers";
 
 
 
 const BasketComp = ({ productDetail }) => {
     const navigate = useNavigate();
-
+    
     const basketItems = useSelector(state => state.basket.basketItems);
     
     const dispatch = useDispatch();
     
     console.log(basketItems)
     console.log(productDetail)
-    const handleDeleteProduct = () => {
-        dispatch(deleteProduct(productDetail.id));
-        console.log(productDetail.id)
-        console.log('Ürün başarıyla silindi');
-        
-      };
-      
-
-
-      const handleAddProduct = () => {
-        // Dispatch the addProduct action with the given id
-        dispatch(addProduct(productDetail));
-        console.log('Ürün başarıyla eklendi');
-        navigate(`/products/${productDetail.id}/basket/sepet`);
-        
-
-      };
-      
-
-
 
     const [quantity, setQuantity] = useState(1);
     const increment = () => {
@@ -46,22 +27,46 @@ const BasketComp = ({ productDetail }) => {
     }
 
 
+       
+    
+
+const shipPrice = () => {
+            if (productDetail?.price * quantity >= 100) {
+                return 0;
+            } else {
+                return 20;
+            }
+        };
+    
+    
+ const ürünFiyatı = Number((productDetail?.price * quantity).toFixed(2));
+        const shippingCost = Number(shipPrice());
+        const total = (ürünFiyatı + shippingCost).toFixed(2);
 
 
+    const handleDeleteProduct = () => {
+        dispatch(deleteProduct(productDetail.id));
+        console.log(productDetail.id)
+        console.log('Ürün başarıyla silindi');
+        
+    };
+      
 
-    const shipPrice = () => {
+
+      const handleAddProduct = () =>{
+        // Dispatch the addProduct action with the given id
+        dispatch(addProduct(productDetail));
+        dispatch(setTotal({ productId: productDetail.id, total:total }));
+        console.log('Ürün başarıyla eklendi');
+        navigate(`/products/${productDetail.id}/basket/sepet`);
 
 
-        if (productDetail?.price * quantity >= 100) {
-            return 0;
-        } else {
-            return 20;
-        }
     }
+      
 
-    const ürünFiyatı = Number((productDetail?.price * quantity).toFixed(2));
-    const shippingCost = Number(shipPrice());
-    const total = (ürünFiyatı + shippingCost).toFixed(2);
+
+
+   
 
     const sizes = useSelector(state => state.size.selectedSize);
     console.log(sizes)

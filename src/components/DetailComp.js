@@ -8,7 +8,7 @@ import { addProductToFavori } from "../redux/favoriSlice";
 const DetailComp = ({productDetail}) =>{
   
 
-
+console.log(productDetail.category)
  
   const dispatch = useDispatch()
   const [selectedSize, setSelectedSize] = useState(null);
@@ -19,16 +19,32 @@ const DetailComp = ({productDetail}) =>{
     dispatch(sizeSelected(size))
   }
 
-  const sizes = ["XS","S","M","L","XL","XXL","2XL"];
-  const sizeList = sizes.map((size, index) =>{ 
-    return <li
-      selectedSize = {selectedSize}
-      key={index}
-      onClick={() => handleClick(size)}
-      className={`border p-1 cursor-pointer hover:border-red-500 ${selectedSize === size ? 'bg-orange-500' : 'bg-white'}`}>
-      {size}
-    </li>
-  })
+  const renderSizeList = () => {
+    if (
+      productDetail.category === "men's clothing" ||
+      productDetail.category === "women's clothing"
+    ) {
+      const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', '2XL'];
+      return (
+        <ul className='flex gap-2 my-1'>
+          {sizes.map((size, index) => (
+            <li
+              selectedSize={selectedSize}
+              key={index}
+              onClick={() => handleClick(size)}
+              className={`border p-1 cursor-pointer hover:border-red-500 ${
+                selectedSize === size ? 'bg-orange-500' : 'bg-white'
+              }`}
+            >
+              {size}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return null;
+    }
+  }
 
   const handleAddToCart = () => {
     
@@ -60,15 +76,15 @@ const DetailComp = ({productDetail}) =>{
           </div>
           <div>
             <ul className='flex gap-2 my-1'>
-              {sizeList}  
+            {renderSizeList()}  
             </ul>
           </div>
           <div className='flex justify-between'>
             <div className='flex justify-between p-2 w-4/5 bg-orange-500 hover:bg-orange-400 text-white h-10 rounded-sm text-lg'>
-               <button disabled={!selectedSize} onClick={handleAddToCart} type="">SEPETE EKLE</button>   
+               <button  onClick={handleAddToCart} type="">SEPETE EKLE</button>   
             </div>
             <div className='flex items-center border w-12 justify-center rounded-sm'>
-              <AiOutlineHeart disabled={!selectedSize} onClick={handleFavori} className='stroke-current text-gray-500 hover:text-red-500' size={28} />
+              <AiOutlineHeart  onClick={handleFavori} className='stroke-current text-gray-500 hover:text-red-500' size={28} />
             </div>
           </div>
         </div>
