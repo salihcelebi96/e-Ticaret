@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import masterCard from "../assets/mastercard.svg";
 import visa from "../assets/visa.svg"
@@ -11,13 +11,25 @@ const PaymentPage = () => {
   const basketItems = useSelector(state => state.basket.basketItems);
   const productTotals = useSelector(state => state.total.productTotals);
   console.log(productTotals)
-
+  const [totalPay,setTotalPay] = useState("")
   const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
   const [cvv, setCvv] = useState('');
   const [cardholderName, setCardholderName] = useState('');
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(true);
+
+
+   useEffect(() => {
+    
+    let totalAmount = 0;
+    basketItems.forEach(item => {
+      totalAmount += Number(productTotals[item.id]);
+    });
+    setTotalPay(totalAmount);
+  }, [basketItems, productTotals]);
+
+
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -155,6 +167,10 @@ const PaymentPage = () => {
             <p> {productTotals[item.id]} TL</p>
         </div>
     ))}
+    <div>
+      <label> sum of All Price </label>
+      <p> {totalPay}  </p>
+    </div>
 </div>
 
         <div>
