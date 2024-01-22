@@ -53,9 +53,9 @@ const dispatch = useDispatch();
 
 
     return (
-        <div className='flex items-center my-5'>
-            <div className='logo'>
-                <div>
+        <div className='flex items-center   my-5'>
+            <div className='logo  '>
+                <div className=' flex items-center px-14'>
                     <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:2xl cursor-pointer">E-Shopping</h1>
                 </div>
 
