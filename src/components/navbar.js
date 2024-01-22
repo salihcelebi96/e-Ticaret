@@ -53,7 +53,7 @@ const dispatch = useDispatch();
 
 
     return (
-        <div className='flex justify-center bg-red-500 ml-16  my-5'>
+        <div className='flex justify-center  ml-16  my-5'>
             <div className='logo  '>
                 <div className=' flex items-center '>
                     <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:2xl cursor-pointer">E-Shopping</h1>
