@@ -55,11 +55,11 @@ const Navbar = ({ productDetail }) => {
     return (
         <div className='flex justify-center ml-16 my-5'>
             <div className='logo text-center lg:text-left'>
-                <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:xl cursor-pointer">E-Shopping</h1>
+                <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:xl cursor-pointer">Shopping</h1>
             </div>
 
             <div className='search relative flex my-2 gap-2 items-center'>
-                <div className='relative bg-red-500 flex justify-end items-center'>
+                <div className='relative  flex justify-end items-center'>
                     <input
                         className='bg-gray-200 rounded-full h-10 sm:w-40 md:w-72 flex justify-center px-2 border border-none outline-none'
                         placeholder='search'
