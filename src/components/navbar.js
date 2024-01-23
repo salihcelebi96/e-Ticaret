@@ -70,7 +70,7 @@ const Navbar = ({ productDetail }) => {
                 </div>
                 
                 {counter > 0 && (
-                    <div className='count absolute h-5 w-5 flex justify-center items-center rounded-full  top-0 -right-3 text-white bg-red-600'>
+                    <div className='count absolute h-5 w-5 flex justify-center items-center rounded-full  top-2 -right-3 text-white bg-red-600'>
                         {counter}
                     </div>
                 )}
