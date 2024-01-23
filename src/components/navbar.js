@@ -53,7 +53,7 @@ const Navbar = ({ productDetail }) => {
 
 
     return (
-        <div className='flex  sm:justify-end  md:justify-around   items-center   h-full mb-10'>
+        <div className='flex  justify-center gap-2 bg-red-500  items-center   h-full mb-10'>
             <div className='logo flex items-center lg:text-left'>
                 <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:xl cursor-pointer">E-Shopping</h1>
             </div>
@@ -74,7 +74,7 @@ const Navbar = ({ productDetail }) => {
                         {counter}
                     </div>
                 )}
-                <div className='flex gap-2'>
+                <div className='flex items-center gap-2'>
                 <AiOutlineHeart onClick={handleFavori} className='stroke-current text-gray-500 hover:text-red-500' size={25} />
                 <BsBasketFill onClick={handleBasket} size={28} /> 
                 </div>
