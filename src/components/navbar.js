@@ -53,7 +53,7 @@ const Navbar = ({ productDetail }) => {
 
 
     return (
-        <div className='flex  sm:justify-around  justify-center    items-center   gap-5    h-full mb-10'>
+        <div className='flex  sm:justify-around  justify-center     items-center   gap-5    h-28 '>
             <div className='logo flex items-center  sm:mx-10   h-full lg:text-left'>
                 <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl 2xl cursor-pointer">E-Shopping</h1>
             </div>
@@ -70,7 +70,7 @@ const Navbar = ({ productDetail }) => {
                 </div>
                 
                 {counter > 0 && (
-                    <div className='count absolute h-5 w-5 flex justify-center items-center rounded-full  top-2 -right-3 text-white bg-red-600'>
+                    <div className='count absolute h-5 w-5 flex justify-center items-center rounded-full  top-6 -right-3 text-white bg-red-600'>
                         {counter}
                     </div>
                 )}
