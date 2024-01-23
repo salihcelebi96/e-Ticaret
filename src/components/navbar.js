@@ -53,7 +53,7 @@ const Navbar = ({ productDetail }) => {
 
 
     return (
-        <div className='flex justify-around items-center   h-full mb-10'>
+        <div className='flex  sm:justify-end  md:justify-around   items-center   h-full mb-10'>
             <div className='logo flex items-center lg:text-left'>
                 <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:xl cursor-pointer">E-Shopping</h1>
             </div>

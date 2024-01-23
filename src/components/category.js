@@ -29,7 +29,7 @@ const Category = ({setCategory}) => {
 
 
   return (
-    <div className='bg-gray-300 flex h-12    gap-5 px-5  items-center'>
+    <div className='bg-gray-300 flex h-12  ml-5   md:gap-5 px-5  items-center'>
       <div onClick={handleClick}   className="hover:bg-gray-600 hover:text-white p-3 cursor-pointer">
         Ana Sayfa
       </div>
