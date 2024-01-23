@@ -81,7 +81,7 @@ console.log(productDetail.category)
           </div>
           <div className='flex justify-between'>
             <div className='flex justify-between p-2 w-4/5 bg-orange-500 hover:bg-orange-400 text-white h-10 rounded-sm text-lg'>
-               <button  onClick={handleAddToCart} type="">SEPETE EKLE</button>   
+               <button className='h-full w-full' onClick={handleAddToCart} type="">SEPETE EKLE</button>   
             </div>
             <div className='flex items-center border w-12 justify-center rounded-sm'>
               <AiOutlineHeart  onClick={handleFavori} className='stroke-current text-gray-500 hover:text-red-500' size={28} />
