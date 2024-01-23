@@ -134,7 +134,7 @@ const shipPrice = () => {
 
                 </div>
                 <div className='border  h-10 bg-green-500 hover:bg-green-400 rounded-md justify-center flex items-center w-60'>
-                    <button onClick={handleAddProduct}  type="">Siparişi Tamamla</button>
+                    <button className='h-full w-full' onClick={handleAddProduct}  type="">Siparişi Tamamla</button>
                 </div>
                 {/* <div className='border h-10 bg-red-500 hover:bg-red-400 rounded-md justify-center flex items-center w-60'>
                     <button onClick={handleDeleteProduct} type="">Ürünü Sil</button>
