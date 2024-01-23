@@ -58,7 +58,7 @@ const Navbar = ({ productDetail }) => {
                 <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl 2xl cursor-pointer">E-Shopping</h1>
             </div>
 
-            <div className='search relative  h-full flex my-2 gap-2 items-center'>
+            <div className='search relative   h-full flex my-2 gap-2 items-center'>
                 <div className='relative   flex justify-end items-center'>
                     <input
                         className='bg-gray-200 rounded-full h-10 sm:w-72 w-40 flex justify-center px-2 border border-none outline-none'
@@ -68,12 +68,14 @@ const Navbar = ({ productDetail }) => {
                     />
                     <FiSearch size={15} className='absolute mx-1' />
                 </div>
-
+                
                 {counter > 0 && (
-                    <div className='count absolute h-5 w-5 flex justify-center items-center rounded-full top-0 -right-3 text-white bg-red-600'>
+                    <div className='count absolute h-5 w-5 flex justify-center items-center rounded-full  top-0 -right-3 text-white bg-red-600'>
                         {counter}
                     </div>
                 )}
+                
+               
                 <div className='flex items-center gap-2'>
                 <AiOutlineHeart onClick={handleFavori} className='stroke-current text-gray-500 hover:text-red-500' size={25} />
                 <BsBasketFill onClick={handleBasket} size={28} /> 
