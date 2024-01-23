@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BsBasketFill } from 'react-icons/bs';
 import "./navbar.css"
 import { AiOutlineHeart } from "react-icons/ai"
@@ -53,15 +53,15 @@ const Navbar = ({ productDetail }) => {
 
 
     return (
-        <div className='flex  justify-center gap-2 bg-red-500  items-center   h-full mb-10'>
-            <div className='logo flex items-center lg:text-left'>
-                <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl sm:xl cursor-pointer">E-Shopping</h1>
+        <div className='flex  sm:justify-around  justify-center    items-center       h-full mb-10'>
+            <div className='logo flex items-center  mx-10   h-full lg:text-left'>
+                <h1 onClick={handleAddToCart} className="font-bold lg:text-6xl md:text-3xl 2xl cursor-pointer">E-Shopping</h1>
             </div>
 
-            <div className='search relative flex my-2 gap-2 items-center'>
-                <div className='relative  flex justify-end items-center'>
+            <div className='search relative  h-full flex my-2 gap-2 items-center'>
+                <div className='relative   flex justify-end items-center'>
                     <input
-                        className='bg-gray-200 rounded-full h-10 sm:w-40 md:w-72 flex justify-center px-2 border border-none outline-none'
+                        className='bg-gray-200 rounded-full h-10 sm:w-40 md:w-72 lg:w-72 flex justify-center px-2 border border-none outline-none'
                         placeholder='search'
                         value={filter}
                         onChange={handleSearch}
